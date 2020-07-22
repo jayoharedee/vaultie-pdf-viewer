@@ -7,5 +7,3 @@ If I was to do things differently, I would have used the AWS SDK to upload all t
 The project was a lot of fun to work on and even though I didn't quite achieve what I was intending to do, it left me in a good place with some development tasks to still complete on my own time.
 
 Thank you very much for your interest in me.
-
-I
