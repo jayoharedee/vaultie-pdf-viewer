@@ -2,10 +2,11 @@ const express = require('express')
 const fileupload = require('express-fileupload')
 
 const app = express()
+const router = express.Router()
 
 // middlewares
 app.use(fileupload())
-
+app.use('/api', router)
 // upload endpoint
 app.post('/upload', (req, res) => {
   // reject bad requests
@@ -35,4 +36,4 @@ app.post('/upload', (req, res) => {
 })
 
 // server
-app.listen(5000, () => console.log('server started...'))
+app.listen(6000, () => console.log('server started...'))
