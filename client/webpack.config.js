@@ -1,13 +1,14 @@
-const webpack = require('webpack');
-const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  mode:
+    process.env.NODE_ENV === 'production'
+      ? 'production'
+      : 'development',
   context: __dirname,
-  entry: [
-    './index.js',
-  ],
+  entry: ['./index.js'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].bundle.js',
@@ -19,18 +20,11 @@ module.exports = {
     rules: [
       {
         test: /\.less$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'less-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'less-loader'],
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.jsx?$/,
@@ -40,18 +34,23 @@ module.exports = {
     ],
   },
   plugins: [
-    // new webpack.DefinePlugin({
-    //   'process.env': {
-    //     NODE_ENV: JSON.stringify('production'),
-    //   },
-    // }),
     new CopyWebpackPlugin([
       { from: './index.html' },
       // { from: './sample.pdf' },
-      { from: 'node_modules/pdfjs-dist/cmaps/', to: 'cmaps/' },
+      {
+        from: 'node_modules/pdfjs-dist/cmaps/',
+        to: 'cmaps/',
+      },
     ]),
   ],
   optimization: {
     minimize: true,
   },
-};
+  devServer: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:6000",
+      }
+    }
+  }
+}
