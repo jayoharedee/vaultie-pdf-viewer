@@ -17,5 +17,10 @@ If the PDF is sufficient the plan was to upload to the server for storage. I was
 - [ ] Wire up Jest and write unit tests
 
 ## How to run the application
+To run for the first time, ensure that you are in the project root and execute `./bin/startup.sh`
 
-Ensure that you are in the project root and execute ./bin/startup.sh
+Any subsequent runs can be made in the server folder by running `npm run dev`
+
+This is a bit jiggy due to the use of Concurrently to run both my back and front end servers.
+
+The frontend will be found on port 8080 and the backend is running on 6000
