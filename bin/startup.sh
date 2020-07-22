@@ -1,5 +1,5 @@
 #!/bin/bash
-cd server
+cd client && npm i
 
 # Concurrently was used while development took place
-npm run dev
+cd ../server && npm i && npm run dev
