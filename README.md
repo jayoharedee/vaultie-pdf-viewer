@@ -11,9 +11,10 @@ If the PDF is sufficient the plan was to upload to the server for storage. I was
 ## Features that are incomplete which I will finish regardless of my destiny
 
 - [ ] Styling
-- [ ] Upload is currently broken
+- [ ] Fix the file uploader
 - [ ] Dockerized app for deployments
 - [ ] CI/CD for one click deploys
+- [ ] Wire up Jest and write unit tests
 
 ## How to run the application
 
