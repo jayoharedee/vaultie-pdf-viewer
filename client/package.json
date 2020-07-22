@@ -1,14 +1,16 @@
 {
   "name": "vaultie-pdf-loader",
-  "version": "4.0.0",
+  "version": "0.1.0",
   "description": "A renderer for PDF documents",
   "private": true,
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "start": "webpack-dev-server"
   },
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-pdf": "latest"
@@ -30,5 +32,6 @@
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

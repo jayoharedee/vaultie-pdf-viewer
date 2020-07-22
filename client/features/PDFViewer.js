@@ -19,7 +19,6 @@ function PDFViewer({
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages)
-    console.log('numpages', numPages)
   }
 
   function handleNextPage() {
@@ -35,6 +34,7 @@ function PDFViewer({
     if (pageNumber === 1) {
       return false
     }
+
     setPageNumber(pageNumber - 1)
   }
 
@@ -62,15 +62,14 @@ function PDFViewer({
           }
         })}
       </Document>
-      <Button onClick={handleNextPage} title={'Next Page'} />
       <Button onClick={handlePreviousPage} title={'Previous Page'} />
+      <Button onClick={handleNextPage} title={'Next Page'} />
     </>
   )
 }
 
 PDFViewer.propTypes = {
-  file: PropTypes.string.isRequired,
-  setFile: PropTypes.func.isRequired,
+  file: PropTypes.object.isRequired,
   onFileChange: PropTypes.func.isRequired,
 }
 
