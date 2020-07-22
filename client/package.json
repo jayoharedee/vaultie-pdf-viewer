@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "client": "webpack"
+    "start": "webpack-dev-server"
   },
   "license": "MIT",
   "dependencies": {
@@ -32,6 +32,5 @@
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.11.0"
-  },
-  "proxy": "http://localhost:5000"
+  }
 }
